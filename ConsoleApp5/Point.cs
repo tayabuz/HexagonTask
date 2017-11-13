@@ -67,7 +67,5 @@ namespace ConsoleApp5
         {
             return !(a == b);
         }
-
-
     }
 }
