@@ -80,7 +80,5 @@ namespace NUnit.Tests1
             Assert.AreEqual(hex, hexagon);
 
         }
-
-
     }
 }
