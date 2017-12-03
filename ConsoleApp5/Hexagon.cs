@@ -72,9 +72,9 @@ namespace ConsoleApp5
             (x3-x0)*(y1-y3)-(x1-x3)*(y3-y0)
             Если они одинакового знака, то точка внутри треугольника, если что-то из этого - ноль, то точка лежит на стороне, иначе точка вне треугольника.*/
             int FirstTriaglePl1, FirstTriaglePl2, FirstTriaglePl3;
-            FirstTriaglePl1 = (P4.X - point.X) * (P5.Y - P4.Y) - (P5.X - P4.X) * (P4.Y - point.Y);//+
-            FirstTriaglePl2 = (P5.X - point.X) * (P2.Y - P5.Y) - (P2.X - P5.X) * (P5.Y - point.Y);//+
-            FirstTriaglePl3 = (P2.X - point.X) * (P4.Y - P2.Y) - (P4.X - P2.X) * (P2.Y - point.Y);//+
+            FirstTriaglePl1 = (P4.X - point.X) * (P5.Y - P4.Y) - (P5.X - P4.X) * (P4.Y - point.Y);
+            FirstTriaglePl2 = (P5.X - point.X) * (P2.Y - P5.Y) - (P2.X - P5.X) * (P5.Y - point.Y);
+            FirstTriaglePl3 = (P2.X - point.X) * (P4.Y - P2.Y) - (P4.X - P2.X) * (P2.Y - point.Y);
 
             if ((FirstTriaglePl1 >= 0 && FirstTriaglePl2 >= 0 && FirstTriaglePl3 >= 0) || (FirstTriaglePl1 <= 0 && FirstTriaglePl2 <= 0 && FirstTriaglePl3 <= 0))
             {
