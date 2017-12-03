@@ -54,10 +54,17 @@ namespace ConsoleApp5
         public bool IsPointInside(Point point)
         {
             
-           if ((point.X <= P1.X) && (point.X >= P2.X) && (point.Y >= P2.Y) && (point.Y <= P4.Y))
-           {
+            int B = Convert.ToInt32((P1.X - P2.X));
+            double K1 = RFunctionConjunction(Convert.ToDouble(point.X - P2.X), Convert.ToDouble(point.Y - P2.Y));
+            int Z = (-1) * (point.X - P2.X) + B;
+            double K2 = RFunctionConjunction(K1, Convert.ToDouble(Z));
+            int A = Convert.ToInt32((P4.Y - P2.Y));
+            int Z1 = (-1) * (point.Y - P2.Y) + A ;
+            double K3 = RFunctionConjunction(K2, Convert.ToDouble(Z1));
+            if ((K3 >= 0.0) && ((point.X != 0)||(point.Y!= 0)))
+            {
                 return true;
-           }
+            }
             /*Математическая часть - векторное и псевдоскалярное произведение.
             Реализация - считаются произведения (1,2,3 - вершины треугольника, 0 - точка):
             (x1-x0)*(y2-y1)-(x2-x1)*(y1-y0)
@@ -125,6 +132,11 @@ namespace ConsoleApp5
         public static bool operator !=(Hexagon h1, Hexagon h2)
         {
             return !Equals(h1, h2);
+        }
+        public static double RFunctionConjunction(double X, double Y)
+        {
+            double result = X + Y - Math.Sqrt(Math.Pow(X,2) + Math.Pow(Y,2));
+            return result;
         }
     }
 }
